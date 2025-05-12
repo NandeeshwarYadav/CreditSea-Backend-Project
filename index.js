@@ -489,7 +489,7 @@ app.put('/admin/verify-loan/:id', async (req, res) => {
         WHERE id = ? AND status = 'Verified'
       `, [loanId]);
     } 
-    elif  (status=="Pending"){
+    else if  (status==="Pending"){
       result = await db.run(`
         UPDATE loan_applications
         SET status = 'Rejected'
